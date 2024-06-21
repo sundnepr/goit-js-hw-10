@@ -1,17 +1,11 @@
-/* import "flatpickr/dist/flatpickr.min.css"; */
-
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
 @import url('./vite-promo.css');
 @import url('./header.css');
+@import Url('./1-timer.css');
+@import Url('./2-snackbar.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, Avenir, Helvetica, Arial, Montserrat sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
