@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Document</title>
+  <script type="module" crossorigin src="/goit-js-hw-10/commonHelpers2.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/modulepreload-polyfill-3cfb730f.js">
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-10/assets/vendor-77e16229.js">
+  <link rel="stylesheet" href="/goit-js-hw-10/assets/vendor-7a007824.css">
   <link rel="stylesheet" href="/goit-js-hw-10/assets/2-snackbar-370c5db0.css">
 </head>
 <body>
-    <a href="./index.html">Back</a>
+  <!-- <p><a href="./index.html">Go back</a></p> -->
     <form class="form">
         <label>
           Delay (ms)
@@ -27,8 +31,10 @@
           </label>
         </fieldset>
       
-        <button type="submit">Create notification</button>
+        <button type="submit" data-create>Create notification</button>
       </form>
+
+      
     
 </body>
 </html>
