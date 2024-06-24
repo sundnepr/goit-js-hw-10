@@ -17,6 +17,7 @@ const refs = {
 
 refs.startBtn.disabled = true;
 
+
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -48,28 +49,24 @@ flatpickr('#datetime-picker', options);
 
 refs.startBtn.addEventListener('click', () => {
   intervalId = setInterval(() => {
+
     refs.startBtn.disabled = true;
+    refs.inputDate.disabled = true;
+
     const currentTime = Date.now();
     const diff = userDate - currentTime;
-    if (diff > 0){
-      const time = convertMs(diff);
-      refs.days.textContent = time.days.toString().padStart(2, '0');
-      refs.hours.textContent = time.hours.toString().padStart(2, '0');
-      refs.minutes.textContent = time.minutes.toString().padStart(2, '0');
-      refs.seconds.textContent = time.seconds.toString().padStart(2, '0');
-      console.log(refs.seconds.textContent);
-    } else {
-      clearInterval(intervalId);
+    const time = convertMs(diff);
+    refs.days.textContent = time.days.toString().padStart(2, '0');
+    refs.hours.textContent = time.hours.toString().padStart(2, '0');
+    refs.minutes.textContent = time.minutes.toString().padStart(2, '0');
+    refs.seconds.textContent = time.seconds.toString().padStart(2, '0');
+    console.log(refs.seconds.textContent);
+
+    if (diff < 1000){
+     clearInterval(intervalId);
     }
   
-  }, 1000);
-
-  setTimeout(() => {
-    clearInterval(intervalId);
-  }, initTime - Date.now() - 1000);
-
- 
-
+  }, 1000); 
 });
 
 function convertMs(ms) {
